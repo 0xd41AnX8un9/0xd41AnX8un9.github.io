@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
         /* Cyberpunk / Pentester Theme CSS */
         :root {
@@ -27,21 +25,13 @@
             background-color: var(--bg-color);
         }
 
-        /* --- HEADER UPDATED WITH FLEXBOX FOR CORNER ICONS --- */
+        /* --- UPDATED HEADER FOR LEFT ALIGNMENT --- */
         header {
             background: #050508;
-            padding: 2.5rem 4rem;
+            padding: 2.5rem 4rem; /* Increased side padding to keep it beautifully spaced from the edge */
+            text-align: left; /* Pulls content to the left */
             border-bottom: 1px solid var(--neon-pink);
             box-shadow: 0 4px 15px rgba(255, 0, 255, 0.1);
-            
-            /* Turns header into a flexbox container */
-            display: flex;
-            justify-content: space-between; /* Spreads title to left, icons to right */
-            align-items: center; /* Vertically centers everything */
-        }
-
-        .header-title-block {
-            text-align: left;
         }
 
         header h1 {
@@ -52,36 +42,16 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px rgba(0, 255, 255, 0.5);
+            display: block;
         }
 
         header p {
-            margin: 0.5rem 0 0 0;
+            margin: 0.5rem 0 0 0; /* Cleared out margins to keep text snapping tightly left */
             font-size: 1.2rem;
             color: var(--neon-pink);
             text-shadow: 0 0 3px rgba(255, 0, 255, 0.5);
         }
 
-        /* --- NEW CORNER ICONS STYLE --- */
-        .header-icons {
-            display: flex;
-            gap: 20px; /* Space between icons */
-        }
-
-        .header-icons a {
-            color: var(--neon-cyan);
-            font-size: 1.8rem; /* Makes the icons beautifully readable */
-            text-decoration: none;
-            transition: all 0.3s ease;
-            text-shadow: 0 0 5px var(--neon-cyan);
-        }
-
-        .header-icons a:hover {
-            color: var(--neon-pink);
-            text-shadow: 0 0 10px var(--neon-pink);
-            transform: scale(1.1); /* Slight pop effect on hover */
-        }
-
-        /* --- Rest of Layout Container --- */
         .container {
             max-width: 800px;
             margin: 2rem auto;
@@ -144,4 +114,75 @@
             border: 1px solid var(--neon-cyan);
             border-radius: 2px;
             background: rgba(0, 255, 255, 0.05);
-            transition: all 0.
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #444466;
+            font-size: 0.9rem;
+            border-top: 1px solid #111122;
+            background: #050508;
+        }
+
+        /* Responsive spacing adjustment for phones */
+        @media (max-width: 600px) {
+            header {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>0xd41AnX8un9</h1>
+        <p>Aspiring Professional | Creator | Problem Solver</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio! I am passionate about learning new technologies and solving interesting problems. This is where I showcase my journey, projects, and skills.</p>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            
+            <div class="project-card">
+                <h3>Project Title One</h3>
+                <p>A brief description of what this project does, the tools you used to build it, and why it matters.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Title Two</h3>
+                <p>Another awesome project description. You can add as many of these "project-card" blocks as you want!</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Connect With Me</h2>
+            <p>Feel free to reach out via any of the platforms below:</p>
+            <div class="contact-links">
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="mailto:your.email@example.com">Email</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 0xd41AnX8un9. Built with HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>
