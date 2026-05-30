@@ -26,15 +26,20 @@
             background-color: var(--bg-color);
         }
 
-        /* --- HEADER WITH FLEXBOX FOR CORNER ICONS --- */
+        /* --- HEADER UPDATED WITH CYBER THEME BANNER IMAGE --- */
         header {
-            background: #050508;
-            padding: 2.5rem 4rem;
+            /* Replace 'cyber-banner.jpg' with your actual image filename on GitHub.
+               The linear-gradient acts as a dark overlay tint so neon elements stand out clearly. */
+            background: linear-gradient(rgba(5, 5, 8, 0.75), rgba(5, 5, 8, 0.85)), url('cyber-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 3.5rem 4rem; /* Slightly taller padding for better banner proportions */
             border-bottom: 1px solid var(--neon-pink);
-            box-shadow: 0 4px 15px rgba(255, 0, 255, 0.1);
+            box-shadow: 0 4px 15px rgba(255, 0, 255, 0.15);
             display: flex;
-            justify-content: space-between; /* Pushes title block left, icons container right */
-            align-items: center; /* Vertically aligns elements */
+            justify-content: space-between; 
+            align-items: center; 
         }
 
         .header-title-block {
@@ -48,17 +53,17 @@
             color: var(--neon-cyan);
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px rgba(0, 255, 255, 0.5);
+            text-shadow: 0 0 5px var(--neon-cyan), 0 0 12px rgba(0, 255, 255, 0.6);
         }
 
         header p {
             margin: 0.5rem 0 0 0;
             font-size: 1.2rem;
             color: var(--neon-pink);
-            text-shadow: 0 0 3px rgba(255, 0, 255, 0.5);
+            text-shadow: 0 0 4px rgba(255, 0, 255, 0.6);
         }
 
-        /* --- HEADER CORNER ICONS STYLE --- */
+        /* --- HEADER CORNER ICONS --- */
         .header-icons {
             display: flex;
             gap: 25px;
@@ -66,7 +71,7 @@
 
         .header-icons a {
             color: var(--neon-cyan);
-            font-size: 2.2rem; /* Larger icon sizing matching the mockup layout */
+            font-size: 2.2rem; 
             text-decoration: none;
             transition: all 0.3s ease;
             text-shadow: 0 0 8px var(--neon-cyan);
