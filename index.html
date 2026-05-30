@@ -25,10 +25,11 @@
             background-color: var(--bg-color);
         }
 
+        /* --- UPDATED HEADER FOR LEFT ALIGNMENT --- */
         header {
             background: #050508;
-            padding: 3rem 1rem;
-            text-align: center;
+            padding: 2.5rem 4rem; /* Increased side padding to keep it beautifully spaced from the edge */
+            text-align: left; /* Pulls content to the left */
             border-bottom: 1px solid var(--neon-pink);
             box-shadow: 0 4px 15px rgba(255, 0, 255, 0.1);
         }
@@ -41,9 +42,11 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px rgba(0, 255, 255, 0.5);
+            display: block;
         }
 
         header p {
+            margin: 0.5rem 0 0 0; /* Cleared out margins to keep text snapping tightly left */
             font-size: 1.2rem;
             color: var(--neon-pink);
             text-shadow: 0 0 3px rgba(255, 0, 255, 0.5);
@@ -128,6 +131,13 @@
             border-top: 1px solid #111122;
             background: #050508;
         }
+
+        /* Responsive spacing adjustment for phones */
+        @media (max-width: 600px) {
+            header {
+                padding: 2rem 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -171,7 +181,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Your Name. Built with HTML & CSS.</p>
+        <p>&copy; 2026 0xd41AnX8un9. Built with HTML & CSS.</p>
     </footer>
 
 </body>
