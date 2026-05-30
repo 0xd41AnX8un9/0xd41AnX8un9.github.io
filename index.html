@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        /* Cyberpunk / Pentester Theme CSS */
+        :root {
+            --bg-color: #0a0a0f;
+            --panel-bg: #0d0d14;
+            --neon-cyan: #00ffff;
+            --neon-pink: #ff00ff;
+            --terminal-green: #00ff00;
+            --border-dark: #1a1a2e;
+        }
+
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--neon-cyan);
+            background-color: var(--bg-color);
+        }
+
+        header {
+            background: #050508;
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--neon-pink);
+            box-shadow: 0 4px 15px rgba(255, 0, 255, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--neon-pink);
+            text-shadow: 0 0 3px rgba(255, 0, 255, 0.5);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: var(--panel-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #1f1f3a;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-pink);
+            border-bottom: 1px solid #330033;
+            padding-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 5px var(--neon-pink), 0 0 15px rgba(255, 0, 255, 0.4);
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+
+        h2::before {
+            content: "> ";
+            color: var(--neon-cyan);
+            text-shadow: none;
+        }
+
+        .project-card {
+            background: #050508;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            border: 1px solid var(--border-dark);
+            border-left: 3px solid var(--terminal-green);
+            border-radius: 2px;
+            color: var(--terminal-green);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            color: var(--neon-cyan);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        .contact-links {
+            margin-top: 1.5rem;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            color: var(--neon-cyan);
+            text-decoration: none;
+            margin-right: 15px;
+            padding: 5px 15px;
+            border: 1px solid var(--neon-cyan);
+            border-radius: 2px;
+            background: rgba(0, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #444466;
+            font-size: 0.9rem;
+            border-top: 1px solid #111122;
+            background: #050508;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>0xd41AnX8un9</h1>
+        <p>Aspiring Professional | Creator | Problem Solver</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio! I am passionate about learning new technologies and solving interesting problems. This is where I showcase my journey, projects, and skills.</p>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            
+            <div class="project-card">
+                <h3>Project Title One</h3>
+                <p>A brief description of what this project does, the tools you used to build it, and why it matters.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Title Two</h3>
+                <p>Another awesome project description. You can add as many of these "project-card" blocks as you want!</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Connect With Me</h2>
+            <p>Feel free to reach out via any of the platforms below:</p>
+            <div class="contact-links">
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="mailto:your.email@example.com">Email</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Your Name. Built with HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>
