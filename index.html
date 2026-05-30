@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Cyberpunk / Pentester Theme CSS */
         :root {
@@ -25,13 +26,19 @@
             background-color: var(--bg-color);
         }
 
-        /* --- UPDATED HEADER FOR LEFT ALIGNMENT --- */
+        /* --- HEADER WITH FLEXBOX FOR CORNER ICONS --- */
         header {
             background: #050508;
-            padding: 2.5rem 4rem; /* Increased side padding to keep it beautifully spaced from the edge */
-            text-align: left; /* Pulls content to the left */
+            padding: 2.5rem 4rem;
             border-bottom: 1px solid var(--neon-pink);
             box-shadow: 0 4px 15px rgba(255, 0, 255, 0.1);
+            display: flex;
+            justify-content: space-between; /* Pushes title block left, icons container right */
+            align-items: center; /* Vertically aligns elements */
+        }
+
+        .header-title-block {
+            text-align: left;
         }
 
         header h1 {
@@ -42,16 +49,36 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px rgba(0, 255, 255, 0.5);
-            display: block;
         }
 
         header p {
-            margin: 0.5rem 0 0 0; /* Cleared out margins to keep text snapping tightly left */
+            margin: 0.5rem 0 0 0;
             font-size: 1.2rem;
             color: var(--neon-pink);
             text-shadow: 0 0 3px rgba(255, 0, 255, 0.5);
         }
 
+        /* --- HEADER CORNER ICONS STYLE --- */
+        .header-icons {
+            display: flex;
+            gap: 25px;
+        }
+
+        .header-icons a {
+            color: var(--neon-cyan);
+            font-size: 2.2rem; /* Larger icon sizing matching the mockup layout */
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 8px var(--neon-cyan);
+        }
+
+        .header-icons a:hover {
+            color: var(--neon-pink);
+            text-shadow: 0 0 15px var(--neon-pink);
+            transform: scale(1.1);
+        }
+
+        /* --- Content Layout --- */
         .container {
             max-width: 800px;
             margin: 2rem auto;
@@ -132,10 +159,13 @@
             background: #050508;
         }
 
-        /* Responsive spacing adjustment for phones */
+        /* Mobile Viewport Handling */
         @media (max-width: 600px) {
             header {
+                flex-direction: column;
+                align-items: flex-start;
                 padding: 2rem 1.5rem;
+                gap: 1.5rem;
             }
         }
     </style>
@@ -143,8 +173,16 @@
 <body>
 
     <header>
-        <h1>0xd41AnX8un9</h1>
-        <p>Aspiring Professional | Creator | Problem Solver</p>
+        <div class="header-title-block">
+            <h1>0xd41AnX8un9</h1>
+            <p>Aspiring Professional | Creator | Problem Solver</p>
+        </div>
+
+        <div class="header-icons">
+            <a href="https://github.com/YOUR_USERNAME" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
     </header>
 
     <div class="container">
@@ -172,8 +210,8 @@
             <h2>Connect With Me</h2>
             <p>Feel free to reach out via any of the platforms below:</p>
             <div class="contact-links">
-                <a href="#" target="_blank">GitHub</a>
-                <a href="#" target="_blank">LinkedIn</a>
+                <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank">LinkedIn</a>
                 <a href="mailto:your.email@example.com">Email</a>
             </div>
         </section>
