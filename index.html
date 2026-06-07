@@ -27,16 +27,16 @@
             background-color: var(--bg-color);
         }
 
-        /* --- HEADER --- */
+        /* --- HEADER WITH BAMBOO SAMURAI BANNER BACKGROUND --- */
         header {
-            /* You can swap this out for a panoramic Wano Country landscape or a bamboo forest background later */
-            background: linear-gradient(rgba(6, 7, 7, 0.85), rgba(12, 14, 14, 0.95)), url('samurai-banner.jpg');
+            /* Using a high-quality Wano-style monochrome landscape. You can replace this URL with your local filename if preferred */
+            background: linear-gradient(rgba(6, 7, 7, 0.75), rgba(12, 14, 14, 0.9)), url('https://images.unsplash.com/photo-1542044896530-05d85be9b11a?q=80&w=1600&auto=format&fit=crop');
             background-size: cover;
-            background-position: center;
+            background-position: center 35%;
             background-repeat: no-repeat;
-            padding: 3.5rem 4rem; 
-            border-bottom: 3px solid var(--wano-crimson); /* Crimson sword-slash border line */
-            box-shadow: 0 4px 20px rgba(27, 77, 62, 0.4);
+            padding: 4.5rem 4rem; 
+            border-bottom: 3px solid var(--wano-crimson); 
+            box-shadow: 0 4px 25px rgba(0, 255, 170, 0.15);
             display: flex;
             justify-content: space-between; 
             align-items: center; 
@@ -51,21 +51,22 @@
         header h1 {
             margin: 0;
             font-size: clamp(2rem, 5vw, 3.2rem);
-            font-family: 'Shojumaru', cursive; /* Samurai brush aesthetic */
+            font-family: 'Shojumaru', cursive; 
             color: var(--zoro-green);
             text-transform: uppercase;
             letter-spacing: 3px;
-            text-shadow: 0 0 8px rgba(0, 255, 170, 0.5), 3px 3px 0px var(--wano-crimson);
+            text-shadow: 0 0 12px rgba(0, 255, 170, 0.6), 3px 3px 0px var(--wano-crimson);
             word-break: break-word;
         }
 
         header p {
             margin: 0.7rem 0 0 0;
-            font-size: clamp(0.9.5rem, 2.5vw, 1.1rem);
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
             color: var(--katana-silver);
             letter-spacing: 2px;
-            border-left: 2px solid var(--wano-crimson);
+            border-left: 3px solid var(--wano-crimson);
             padding-left: 10px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
         }
 
         /* --- PROFILE CONTAINER --- */
@@ -81,8 +82,9 @@
             height: 100px;
             border-radius: 50%;
             border: 3px solid var(--zoro-green);
-            box-shadow: 0 0 15px rgba(0, 255, 170, 0.4);
+            box-shadow: 0 0 15px rgba(0, 255, 170, 0.5);
             object-fit: cover;
+            background-color: var(--panel-bg);
         }
 
         /* --- SOCIAL ICONS --- */
@@ -96,12 +98,13 @@
             font-size: 1.8rem; 
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.9));
         }
 
         .header-icons a:hover {
             color: var(--zoro-green);
             text-shadow: 0 0 12px var(--zoro-green);
-            transform: scale(1.2) rotate(-5deg); /* Dynamic subtle tilt like a sword draw */
+            transform: scale(1.2) rotate(-5deg); 
         }
 
         /* --- CONTENT LAYOUT --- */
@@ -121,7 +124,6 @@
             position: relative;
         }
 
-        /* A subtle corner accent line that mimics traditional Japanese framing layouts */
         section::before {
             content: '';
             position: absolute;
@@ -143,7 +145,6 @@
             margin-top: 0;
         }
 
-        /* Custom Cross-Sword custom heading prefix instead of modern '>' console symbol */
         h2::before {
             content: "\f71c  "; 
             font-family: "Font Awesome 6 Free";
@@ -155,11 +156,11 @@
 
         /* --- PROJECT CARDS --- */
         .project-card {
-            background: rgba(27, 77, 62, 0.1); /* Translucent moss green tint */
+            background: rgba(27, 77, 62, 0.1); 
             padding: 1.5rem;
             margin-top: 1.5rem;
             border: 1px solid #14352b;
-            border-left: 4px solid var(--wano-crimson); /* Looks like a striking katana slice mark */
+            border-left: 4px solid var(--wano-crimson); 
             border-radius: 2px;
             color: var(--katana-silver);
             transition: transform 0.2s ease;
@@ -194,7 +195,7 @@
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-                padding: 2.5rem 1.5rem;
+                padding: 3rem 1.5rem;
                 gap: 1.5rem;
             }
 
