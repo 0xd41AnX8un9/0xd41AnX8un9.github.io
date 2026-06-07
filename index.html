@@ -28,7 +28,6 @@
 
         /* --- HEADER (Desktop First, Mobile Optimized) --- */
         header {
-            /* Replace 'cyber-banner.jpg' with your actual image filename on GitHub. */
             background: linear-gradient(rgba(5, 5, 8, 0.75), rgba(5, 5, 8, 0.85)), url('cyber-banner.jpg');
             background-size: cover;
             background-position: center;
@@ -39,7 +38,7 @@
             display: flex;
             justify-content: space-between; 
             align-items: center; 
-            flex-wrap: wrap; /* Prevents collision of title and icons */
+            flex-wrap: wrap; 
             gap: 2rem;
         }
 
@@ -49,32 +48,52 @@
 
         header h1 {
             margin: 0;
-            /* Fluid font size: scales smoothly between 2rem (mobile) and 3.5rem (desktop) */
             font-size: clamp(2rem, 5vw, 3.5rem);
             font-family: 'Orbitron', sans-serif;
             color: var(--neon-cyan);
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 0 0 5px var(--neon-cyan), 0 0 12px rgba(0, 255, 255, 0.6);
-            word-break: break-word; /* Prevents overflow if your handle is long */
+            word-break: break-word;
         }
 
         header p {
             margin: 0.5rem 0 0 0;
-            font-size: clamp(1rem, 2.5vw, 1.2rem); /* Fluid text scale */
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
             color: var(--neon-pink);
             text-shadow: 0 0 4px rgba(255, 0, 255, 0.6);
+        }
+
+        /* --- NEW PROFILE & ICONS CONTAINER --- */
+        .profile-widget {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px; /* Spaces the photo away from the icons below it */
+        }
+
+        .profile-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            object-fit: cover;
         }
 
         /* --- HEADER CORNER ICONS --- */
         .header-icons {
             display: flex;
             gap: 25px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            padding: 8px 15px;
+            background: rgba(13, 13, 20, 0.6);
+            border-radius: 2px;
         }
 
         .header-icons a {
             color: var(--neon-cyan);
-            font-size: 2.2rem; 
+            font-size: 1.8rem; /* Slightly balanced size */
             text-decoration: none;
             transition: all 0.3s ease;
             text-shadow: 0 0 8px var(--neon-cyan);
@@ -88,9 +107,9 @@
 
         /* --- Content Layout --- */
         .container {
-            max-width: 900px; /* Slightly wider for modern desktop displays */
+            max-width: 900px;
             margin: 2rem auto;
-            padding: 0 1.5rem; /* Better edge-spacing on mobile phones */
+            padding: 0 1.5rem;
         }
 
         section {
@@ -149,7 +168,7 @@
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                align-items: center; /* Center aligning on mobile yields a cleaner look */
+                align-items: center;
                 text-align: center;
                 padding: 2.5rem 1.5rem;
                 gap: 1.5rem;
@@ -160,7 +179,7 @@
             }
 
             section {
-                padding: 1.5rem; /* Snugger padding for small phone screens */
+                padding: 1.5rem;
             }
         }
     </style>
@@ -173,10 +192,14 @@
             <p>I'm trying to do better.</p>
         </div>
 
-        <div class="header-icons">
-            <a href="https://github.com/0xd41AnX8un9" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <div class="profile-widget">
+            <img class="profile-avatar" src="your-profile-pic.jpg" alt="Profile Picture">
+            
+            <div class="header-icons">
+                <a href="https://github.com/0xd41AnX8un9" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </header>
 
