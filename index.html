@@ -26,20 +26,21 @@
             background-color: var(--bg-color);
         }
 
-        /* --- HEADER UPDATED WITH CYBER THEME BANNER IMAGE --- */
+        /* --- HEADER (Desktop First, Mobile Optimized) --- */
         header {
-            /* Replace 'cyber-banner.jpg' with your actual image filename on GitHub.
-               The linear-gradient acts as a dark overlay tint so neon elements stand out clearly. */
+            /* Replace 'cyber-banner.jpg' with your actual image filename on GitHub. */
             background: linear-gradient(rgba(5, 5, 8, 0.75), rgba(5, 5, 8, 0.85)), url('cyber-banner.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            padding: 3.5rem 4rem; /* Slightly taller padding for better banner proportions */
+            padding: 3.5rem 4rem; 
             border-bottom: 1px solid var(--neon-pink);
             box-shadow: 0 4px 15px rgba(255, 0, 255, 0.15);
             display: flex;
             justify-content: space-between; 
             align-items: center; 
+            flex-wrap: wrap; /* Prevents collision of title and icons */
+            gap: 2rem;
         }
 
         .header-title-block {
@@ -48,17 +49,19 @@
 
         header h1 {
             margin: 0;
-            font-size: 3rem;
+            /* Fluid font size: scales smoothly between 2rem (mobile) and 3.5rem (desktop) */
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-family: 'Orbitron', sans-serif;
             color: var(--neon-cyan);
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 0 0 5px var(--neon-cyan), 0 0 12px rgba(0, 255, 255, 0.6);
+            word-break: break-word; /* Prevents overflow if your handle is long */
         }
 
         header p {
             margin: 0.5rem 0 0 0;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2.5vw, 1.2rem); /* Fluid text scale */
             color: var(--neon-pink);
             text-shadow: 0 0 4px rgba(255, 0, 255, 0.6);
         }
@@ -85,9 +88,9 @@
 
         /* --- Content Layout --- */
         .container {
-            max-width: 800px;
+            max-width: 900px; /* Slightly wider for modern desktop displays */
             margin: 2rem auto;
-            padding: 0 1rem;
+            padding: 0 1.5rem; /* Better edge-spacing on mobile phones */
         }
 
         section {
@@ -118,7 +121,7 @@
 
         .project-card {
             background: #050508;
-            padding: 1rem 1.5rem;
+            padding: 1.5rem;
             margin-top: 1.5rem;
             border: 1px solid var(--border-dark);
             border-left: 3px solid var(--terminal-green);
@@ -130,7 +133,7 @@
             margin-top: 0;
             color: var(--neon-cyan);
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         footer {
@@ -142,13 +145,22 @@
             background: #050508;
         }
 
-        /* Mobile Viewport Handling */
-        @media (max-width: 600px) {
+        /* --- MEDIA QUERIES (Mobile & Tablet Adjustments) --- */
+        @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                align-items: flex-start;
-                padding: 2rem 1.5rem;
+                align-items: center; /* Center aligning on mobile yields a cleaner look */
+                text-align: center;
+                padding: 2.5rem 1.5rem;
                 gap: 1.5rem;
+            }
+
+            .header-title-block {
+                text-align: center;
+            }
+
+            section {
+                padding: 1.5rem; /* Snugger padding for small phone screens */
             }
         }
     </style>
