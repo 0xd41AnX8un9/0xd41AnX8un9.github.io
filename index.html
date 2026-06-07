@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>My Portfolio | Samurai Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shojumaru&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Cyberpunk / Pentester Theme CSS */
+        /* Traditional Japanese Samurai & Roronoa Zoro Color Palette */
         :root {
-            --bg-color: #0a0a0f;
-            --panel-bg: #0d0d14;
-            --neon-cyan: #00ffff;
-            --neon-pink: #ff00ff;
-            --terminal-green: #00ff00;
-            --border-dark: #1a1a2e;
+            --bg-color: #060707;          /* Pure midnight charcoal */
+            --panel-bg: #0c0e0e;          /* Deep inkwell panel background */
+            --zoro-green: #00ffaa;        /* Spirit-energy green aura */
+            --moss-green: #1b4d3e;        /* Zoro's iconic deep green coat */
+            --wano-crimson: #bc002d;      /* Crimson slash accent / Japanese flag sun red */
+            --katana-silver: #e0e0e0;     /* Sharpened steel white-silver */
+            --border-dark: #1f2925;
         }
 
         body {
@@ -22,19 +23,20 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            color: var(--neon-cyan);
+            color: var(--katana-silver);
             background-color: var(--bg-color);
         }
 
-        /* --- HEADER (Desktop First, Mobile Optimized) --- */
+        /* --- HEADER --- */
         header {
-            background: linear-gradient(rgba(5, 5, 8, 0.75), rgba(5, 5, 8, 0.85)), url('cyber-banner.jpg');
+            /* You can swap this out for a panoramic Wano Country landscape or a bamboo forest background later */
+            background: linear-gradient(rgba(6, 7, 7, 0.85), rgba(12, 14, 14, 0.95)), url('samurai-banner.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             padding: 3.5rem 4rem; 
-            border-bottom: 1px solid var(--neon-pink);
-            box-shadow: 0 4px 15px rgba(255, 0, 255, 0.15);
+            border-bottom: 3px solid var(--wano-crimson); /* Crimson sword-slash border line */
+            box-shadow: 0 4px 20px rgba(27, 77, 62, 0.4);
             display: flex;
             justify-content: space-between; 
             align-items: center; 
@@ -48,23 +50,25 @@
 
         header h1 {
             margin: 0;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-family: 'Orbitron', sans-serif;
-            color: var(--neon-cyan);
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-family: 'Shojumaru', cursive; /* Samurai brush aesthetic */
+            color: var(--zoro-green);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 5px var(--neon-cyan), 0 0 12px rgba(0, 255, 255, 0.6);
+            letter-spacing: 3px;
+            text-shadow: 0 0 8px rgba(0, 255, 170, 0.5), 3px 3px 0px var(--wano-crimson);
             word-break: break-word;
         }
 
         header p {
-            margin: 0.5rem 0 0 0;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            color: var(--neon-pink);
-            text-shadow: 0 0 4px rgba(255, 0, 255, 0.6);
+            margin: 0.7rem 0 0 0;
+            font-size: clamp(0.9.5rem, 2.5vw, 1.1rem);
+            color: var(--katana-silver);
+            letter-spacing: 2px;
+            border-left: 2px solid var(--wano-crimson);
+            padding-left: 10px;
         }
 
-        /* --- PROFILE & ICONS CONTAINER --- */
+        /* --- PROFILE CONTAINER --- */
         .profile-widget {
             display: flex;
             flex-direction: column;
@@ -73,95 +77,118 @@
         }
 
         .profile-avatar {
-            width: 90px;
-            height: 90px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            border: 2px solid var(--neon-cyan);
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            border: 3px solid var(--zoro-green);
+            box-shadow: 0 0 15px rgba(0, 255, 170, 0.4);
             object-fit: cover;
         }
 
-        /* --- HEADER CORNER ICONS (Green Box Element Removed) --- */
+        /* --- SOCIAL ICONS --- */
         .header-icons {
             display: flex;
             gap: 25px;
-            /* Border, background-color, and extra padding removed here */
         }
 
         .header-icons a {
-            color: var(--neon-cyan);
+            color: var(--katana-silver);
             font-size: 1.8rem; 
             text-decoration: none;
-            transition: all 0.3s ease;
-            text-shadow: 0 0 8px var(--neon-cyan);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .header-icons a:hover {
-            color: var(--neon-pink);
-            text-shadow: 0 0 15px var(--neon-pink);
-            transform: scale(1.1);
+            color: var(--zoro-green);
+            text-shadow: 0 0 12px var(--zoro-green);
+            transform: scale(1.2) rotate(-5deg); /* Dynamic subtle tilt like a sword draw */
         }
 
-        /* --- Content Layout --- */
+        /* --- CONTENT LAYOUT --- */
         .container {
             max-width: 900px;
-            margin: 2rem auto;
+            margin: 3rem auto;
             padding: 0 1.5rem;
         }
 
         section {
             background: var(--panel-bg);
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border: 1px solid #1f1f3a;
-            border-radius: 4px;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border-dark);
+            border-radius: 2px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        /* A subtle corner accent line that mimics traditional Japanese framing layouts */
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            border-top: 2px solid var(--wano-crimson);
+            border-left: 2px solid var(--wano-crimson);
         }
 
         h2 {
-            font-family: 'Orbitron', sans-serif;
-            color: var(--neon-pink);
-            border-bottom: 1px solid #330033;
-            padding-bottom: 0.5rem;
-            text-transform: uppercase;
-            text-shadow: 0 0 5px var(--neon-pink), 0 0 15px rgba(255, 0, 255, 0.4);
+            font-family: 'Shojumaru', cursive;
+            color: var(--zoro-green);
+            border-bottom: 1px solid var(--moss-green);
+            padding-bottom: 0.6rem;
+            font-size: 1.5rem;
             letter-spacing: 1px;
             margin-top: 0;
         }
 
+        /* Custom Cross-Sword custom heading prefix instead of modern '>' console symbol */
         h2::before {
-            content: "> ";
-            color: var(--neon-cyan);
+            content: "\f71c  "; 
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--wano-crimson);
+            font-size: 1.2rem;
             text-shadow: none;
         }
 
+        /* --- PROJECT CARDS --- */
         .project-card {
-            background: #050508;
+            background: rgba(27, 77, 62, 0.1); /* Translucent moss green tint */
             padding: 1.5rem;
             margin-top: 1.5rem;
-            border: 1px solid var(--border-dark);
-            border-left: 3px solid var(--terminal-green);
+            border: 1px solid #14352b;
+            border-left: 4px solid var(--wano-crimson); /* Looks like a striking katana slice mark */
             border-radius: 2px;
-            color: var(--terminal-green);
+            color: var(--katana-silver);
+            transition: transform 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateX(4px);
+            background: rgba(27, 77, 62, 0.15);
         }
 
         .project-card h3 {
             margin-top: 0;
-            color: var(--neon-cyan);
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
+            color: var(--zoro-green);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.3rem;
+            text-transform: uppercase;
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
-            color: #444466;
-            font-size: 0.9rem;
-            border-top: 1px solid #111122;
-            background: #050508;
+            padding: 2.5rem;
+            color: #556660;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-dark);
+            background: #060707;
+            letter-spacing: 1px;
         }
 
-        /* --- MEDIA QUERIES (Mobile & Tablet Adjustments) --- */
+        /* --- RESPONSIVENESS --- */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -174,9 +201,14 @@
             .header-title-block {
                 text-align: center;
             }
+            
+            header p {
+                border-left: none;
+                padding-left: 0;
+            }
 
             section {
-                padding: 1.5rem;
+                padding: 1.75rem;
             }
         }
     </style>
