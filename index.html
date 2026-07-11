@@ -1,267 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | Samurai Edition</title>
-    <link href="https://fonts.googleapis.com/css2?family=Shojumaru&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Traditional Japanese Samurai & Roronoa Zoro Color Palette */
-        :root {
-            --bg-color: #060707;          /* Pure midnight charcoal */
-            --panel-bg: #0c0e0e;          /* Deep inkwell panel background */
-            --zoro-green: #00ffaa;        /* Spirit-energy green aura */
-            --moss-green: #1b4d3e;        /* Zoro's iconic deep green coat */
-            --wano-crimson: #bc002d;      /* Crimson slash accent / Japanese flag sun red */
-            --katana-silver: #e0e0e0;     /* Sharpened steel white-silver */
-            --border-dark: #1f2925;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: 'Share Tech Mono', monospace;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: var(--katana-silver);
-            background-color: var(--bg-color);
-        }
+<title>DFIR Portfolio | 0xd41AnX8un9</title>
 
-        /* --- HEADER WITH FIXED RESPONSIVE BACKGROUND --- */
-        header {
-            background: linear-gradient(rgba(6, 7, 7, 0.75), rgba(12, 14, 14, 0.9)), url('Photos/2026-06-07 22_19_05-Greenshot image editor.jpg');
-            background-size: cover;
-            background-position: center center; /* Keeps the background centered */
-            background-repeat: no-repeat;
-            padding: 4.5rem 4rem; 
-            border-bottom: 3px solid var(--wano-crimson); 
-            box-shadow: 0 4px 25px rgba(0, 255, 170, 0.15);
-            display: flex;
-            justify-content: space-between; 
-            align-items: center; 
-            flex-wrap: wrap; 
-            gap: 2rem;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-        .header-title-block {
-            text-align: left;
-            max-width: 100%; /* Prevents layout push on mobile */
-        }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        header h1 {
-            margin: 0;
-            /* Balanced fluid text scaling to prevent name clipping */
-            font-size: clamp(1.6rem, 4.5vw, 3.2rem);
-            font-family: 'Shojumaru', cursive; 
-            color: var(--zoro-green);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 12px rgba(0, 255, 170, 0.6), 3px 3px 0px var(--wano-crimson);
-            overflow-wrap: anywhere; /* Forces word breaking if screen gets extremely narrow */
-            word-break: break-word;
-        }
+<style>
 
-        header p {
-            margin: 0.7rem 0 0 0;
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            color: var(--katana-silver);
-            letter-spacing: 2px;
-            border-left: 3px solid var(--wano-crimson);
-            padding-left: 10px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-        }
+:root{
+    --bg:#0b1120;
+    --card:#111827;
+    --card2:#162033;
+    --text:#e5e7eb;
+    --muted:#94a3b8;
+    --blue:#3b82f6;
+    --green:#22c55e;
+    --orange:#f59e0b;
+    --border:#263244;
+}
 
-        /* --- PROFILE CONTAINER --- */
-        .profile-widget {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px; 
-        }
+*{
+    box-sizing:border-box;
+}
 
-        .profile-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 3px solid var(--zoro-green);
-            box-shadow: 0 0 15px rgba(0, 255, 170, 0.5);
-            object-fit: cover;
-            background-color: var(--panel-bg);
-        }
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
 
-        /* --- SOCIAL ICONS --- */
-        .header-icons {
-            display: flex;
-            gap: 25px;
-        }
 
-        .header-icons a {
-            color: var(--katana-silver);
-            font-size: 1.8rem; 
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.9));
-        }
+header{
+    padding:70px 20px;
+    border-bottom:1px solid var(--border);
+    background:
+    linear-gradient(180deg,#111827,#0b1120);
+}
 
-        .header-icons a:hover {
-            color: var(--zoro-green);
-            text-shadow: 0 0 12px var(--zoro-green);
-            transform: scale(1.2) rotate(-5deg); 
-        }
 
-        /* --- CONTENT LAYOUT --- */
-        .container {
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-        }
+.hero{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
 
-        section {
-            background: var(--panel-bg);
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            border: 1px solid var(--border-dark);
-            border-radius: 2px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            position: relative;
-        }
 
-        section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 15px;
-            height: 15px;
-            border-top: 2px solid var(--wano-crimson);
-            border-left: 2px solid var(--wano-crimson);
-        }
+.profile h1{
+    font-size:48px;
+    margin:0;
+    font-weight:700;
+}
 
-        h2 {
-            font-family: 'Shojumaru', cursive;
-            color: var(--zoro-green);
-            border-bottom: 1px solid var(--moss-green);
-            padding-bottom: 0.6rem;
-            font-size: 1.5rem;
-            letter-spacing: 1px;
-            margin-top: 0;
-        }
 
-        h2::before {
-            content: "\f71c  "; 
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            color: var(--wano-crimson);
-            font-size: 1.2rem;
-            text-shadow: none;
-        }
+.profile span{
+    color:var(--blue);
+}
 
-        /* --- PROJECT CARDS --- */
-        .project-card {
-            background: rgba(27, 77, 62, 0.1); 
-            padding: 1.5rem;
-            margin-top: 1.5rem;
-            border: 1px solid #14352b;
-            border-left: 4px solid var(--wano-crimson); 
-            border-radius: 2px;
-            color: var(--katana-silver);
-            transition: transform 0.2s ease;
-        }
 
-        .project-card:hover {
-            transform: translateX(4px);
-            background: rgba(27, 77, 62, 0.15);
-        }
+.profile p{
+    color:var(--muted);
+    font-size:20px;
+}
 
-        .project-card h3 {
-            margin-top: 0;
-            color: var(--zoro-green);
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 1.3rem;
-            text-transform: uppercase;
-        }
 
-        footer {
-            text-align: center;
-            padding: 2.5rem;
-            color: #556660;
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border-dark);
-            background: #060707;
-            letter-spacing: 1px;
-        }
+.badges{
+    margin-top:20px;
+}
 
-        /* --- MEDIA QUERIES (Mobile & Tablet Adjustments) --- */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                padding: 2.5rem 1rem; /* Slightly tighter padding for better mobile view */
-                gap: 1.2rem;
-                background-position: center center; /* Centers the image perfectly on mobile viewports */
-            }
 
-            .header-title-block {
-                text-align: center;
-                width: 100%;
-            }
-            
-            header p {
-                border-left: none;
-                padding-left: 0;
-            }
+.badge{
+    display:inline-block;
+    padding:8px 14px;
+    margin:5px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    font-family:'JetBrains Mono';
+    font-size:13px;
+}
 
-            section {
-                padding: 1.75rem;
-            }
-        }
-    </style>
+
+.avatar{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:3px solid var(--blue);
+    object-fit:cover;
+}
+
+
+.social{
+    margin-top:25px;
+}
+
+
+.social a{
+    color:var(--text);
+    font-size:24px;
+    margin-right:20px;
+}
+
+
+.social a:hover{
+    color:var(--blue);
+}
+
+
+
+.container{
+    max-width:1100px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+
+
+section{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:30px;
+    margin-bottom:30px;
+}
+
+
+h2{
+    margin-top:0;
+    color:var(--blue);
+    font-size:24px;
+}
+
+
+
+.about{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+
+.skill{
+    background:var(--card2);
+    padding:10px 15px;
+    border-radius:8px;
+    border:1px solid var(--border);
+    font-family:'JetBrains Mono';
+}
+
+
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+
+
+.project{
+    background:var(--card2);
+    padding:20px;
+    border-radius:12px;
+    border:1px solid var(--border);
+}
+
+
+.project:hover{
+    border-color:var(--blue);
+}
+
+
+.project h3{
+    margin-top:0;
+    color:var(--green);
+}
+
+
+.project p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+
+
+.timeline{
+    border-left:3px solid var(--blue);
+    padding-left:25px;
+}
+
+
+.timeline-item{
+    margin-bottom:25px;
+}
+
+
+.timeline-item h3{
+    margin:0;
+}
+
+
+
+.cert{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+
+.cert div{
+    background:var(--card2);
+    padding:15px;
+    border-radius:10px;
+    border:1px solid var(--border);
+}
+
+
+
+.contact a{
+    color:var(--blue);
+    text-decoration:none;
+}
+
+
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:var(--muted);
+    border-top:1px solid var(--border);
+}
+
+
+
+@media(max-width:700px){
+
+.hero{
+    flex-direction:column-reverse;
+    text-align:center;
+}
+
+
+.profile h1{
+    font-size:34px;
+}
+
+
+}
+
+</style>
+
 </head>
+
+
 <body>
 
-    <header>
-        <div class="header-title-block">
-            <h1>0xd41AnX8un9</h1>
-            <p>I'm trying to do better.</p>
-        </div>
 
-        <div class="profile-widget">
-            <img class="profile-avatar" src="Photos/ooo.jpg" alt="Profile Picture">
-            
-            <div class="header-icons">
-                <a href="https://github.com/0xd41AnX8un9" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-    </header>
+<header>
 
-    <div class="container">
-        
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Welcome to my portfolio! I am passionate about learning new technologies and solving interesting problems. This is where I showcase my journey, projects, and skills.</p>
-        </section>
+<div class="hero">
 
-        <section id="projects">
-            <h2>My Projects</h2>
-            
-            <div class="project-card">
-                <h3>Project Title One</h3>
-                <p>A brief description of what this project does, the tools you used to build it, and why it matters.</p>
-            </div>
+<div class="profile">
 
-            <div class="project-card">
-                <h3>Project Title Two</h3>
-                <p>Another awesome project description. You can add as many of these "project-card" blocks as you want!</p>
-            </div>
-        </section>
-    </div>
+<h1>0xd41AnX8un9</h1>
 
-    <footer>
-        <p>&copy; 2026 0xd41AnX8un9. Built with HTML & CSS.</p>
-    </footer>
+<p>
+Digital Forensics & Incident Response Analyst
+</p>
+
+
+<div class="badges">
+
+<span class="badge">DFIR</span>
+<span class="badge">Threat Hunting</span>
+<span class="badge">SOC</span>
+<span class="badge">Blue Team</span>
+
+</div>
+
+
+<div class="social">
+
+<a href="#"><i class="fab fa-github"></i></a>
+
+<a href="#"><i class="fab fa-linkedin"></i></a>
+
+<a href="mailto:example@email.com">
+<i class="fas fa-envelope"></i>
+</a>
+
+</div>
+
+
+</div>
+
+
+<img class="avatar" src="Photos/profile.jpg">
+
+</div>
+
+</header>
+
+
+
+<div class="container">
+
+
+
+<section>
+
+<h2>About Me</h2>
+
+<p class="about">
+
+Cybersecurity enthusiast focused on Digital Forensics,
+Incident Response, Threat Hunting and Security Monitoring.
+
+Experienced with security tools, log analysis,
+endpoint investigation and SIEM platforms.
+
+</p>
+
+</section>
+
+
+
+
+<section>
+
+<h2>Technical Skills</h2>
+
+
+<div class="skills">
+
+<div class="skill">Wazuh</div>
+<div class="skill">OpenSearch</div>
+<div class="skill">Elastic SIEM</div>
+<div class="skill">Fortigate</div>
+<div class="skill">Cloudflare WAF</div>
+<div class="skill">Windows Forensics</div>
+<div class="skill">Linux</div>
+<div class="skill">Sysmon</div>
+<div class="skill">Sigma Rules</div>
+<div class="skill">YARA</div>
+<div class="skill">Python</div>
+<div class="skill">PowerShell</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section>
+
+<h2>DFIR Projects</h2>
+
+
+<div class="projects">
+
+
+<div class="project">
+
+<h3>Wazuh SIEM Monitoring</h3>
+
+<p>
+Created security dashboards for Windows events,
+Sysmon monitoring, authentication analysis,
+and suspicious activity detection.
+</p>
+
+</div>
+
+
+
+<div class="project">
+
+<h3>Threat Hunting Lab</h3>
+
+<p>
+Performed investigation using logs,
+MITRE ATT&CK techniques,
+IOC searching and detection rules.
+</p>
+
+</div>
+
+
+
+<div class="project">
+
+<h3>Web Security Monitoring</h3>
+
+<p>
+Analyzed WAF events, SQL injection attempts,
+XSS attacks and suspicious HTTP activities.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section>
+
+<h2>Experience</h2>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item">
+
+<h3>SOC Analyst</h3>
+
+<p>
+Security Monitoring | Incident Investigation | SIEM Operations
+</p>
+
+</div>
+
+
+
+<div class="timeline-item">
+
+<h3>Security Engineer</h3>
+
+<p>
+Firewall, WAF, Log Management and Threat Detection
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section>
+
+<h2>Certifications</h2>
+
+
+<div class="cert">
+
+<div>
+CompTIA Security+
+</div>
+
+<div>
+Fortinet Certified Professional
+</div>
+
+<div>
+Microsoft Security
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="contact">
+
+
+<h2>Contact</h2>
+
+
+<p>
+GitHub:
+<a href="#">
+github.com/0xd41AnX8un9
+</a>
+</p>
+
+
+<p>
+Email:
+<a href="mailto:example@email.com">
+example@email.com
+</a>
+</p>
+
+
+</section>
+
+
+
+</div>
+
+
+
+
+<footer>
+
+© 2026 0xd41AnX8un9 | DFIR Portfolio
+
+</footer>
+
 
 </body>
 </html>
